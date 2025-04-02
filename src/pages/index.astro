@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+<Layout title="Home">
+	<main>
+		<section class="w-full mx-auto lg:w-[740px] py-44">
+			<img 
+			class="rounded-full w-12 h-12 mb-4"
+			src="https://avatars.githubusercontent.com/u/175566321?s=96&v=4" 
+			alt="mi foto"
+			/>
+			<h1 class="text-white text-5xl font-bold flex justify-row flex-row gap-x-4 pb-4">
+				Hola, Soy Andy   <a href="https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/" target="_blank"  class="flex justify-center items-center"> <Badge>Disponible para trabajo </Badge> </a>			
+			</h1>
+			<h2 class="txt-2xl opacity-75 txt-wrap">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, consequuntur quae, eveniet fuga commodi ut molestiae ratione vel error nostrum vero consequatur quis amet.
+			</h2>
 
-<Layout>
-	<Welcome />
+			<ul>
+				<li>
+					<a 
+						href="https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/" 
+						target="_blank" 
+					>
+						<LinkedIn class="w-6 h-6" />
+						LinkedIn						
+					</a>
+				</li>
+
+
+			</ul>
+		</section>
+
+	</main>
 </Layout>
