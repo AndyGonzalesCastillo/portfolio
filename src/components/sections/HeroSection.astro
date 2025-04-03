@@ -1,0 +1,56 @@
+---
+import Localizacion from '../icons/Localizacion.astro';
+import Mail from '../icons/Mail.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
+import Github from '../icons/Github.astro';
+import Curriculum from '../icons/Curriculum.astro';
+import Icons from '../ui/Icons.astro';
+
+const { title, subtitle, location, email } = Astro.props;
+---
+
+<div class='flex flex-col md:flex-row gap-8 items-start mb-12'>
+	<img
+		class='rounded-full w-32 h-32 md:w-40 md:h-40'
+		src={Astro.props.avatar}
+		alt={title}
+	/>
+
+	<div>
+		<h1 class='text-white text-4xl font-bold mb-2'>{title}</h1>
+		<h2 class='text-xl opacity-75 font-medium mb-4'>{subtitle}</h2>
+
+		<div class='flex items-center gap-2 mb-6 opacity-80'>
+			<Localizacion class='size-5' />
+			<span>{location}</span>
+			<img
+				width='20'
+				height='20'
+				src='https://img.icons8.com/color/48/peru.png'
+				alt='Bandera de Perú'
+				class='w-5 h-5'
+			/>
+		</div>
+
+		<div class='flex flex-wrap items-center gap-4'>
+			<Icons href={`mailto:${email}`} class='flex items-center gap-2'>
+				<Mail class='size-5' />
+				<span>{email}</span>
+			</Icons>
+
+			<div class='flex gap-4'>
+				<Icons
+					href='https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/'
+				>
+					<LinkedIn class='size-5' />
+				</Icons>
+				<Icons href='https://github.com/AndyGonzalesCastillo'>
+					<Github class='size-5' />
+				</Icons>
+				<Icons href='/cv.pdf' target='_blank' rel='noopener noreferrer'>
+					<Curriculum class='size-5' />
+				</Icons>
+			</div>
+		</div>
+	</div>
+</div>

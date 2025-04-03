@@ -1,38 +1,35 @@
 ---
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import LinkedIn from '../icons/LinkedIn.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import AboutSection from '../components/sections/AboutSection.astro';
+import TecnologiasSection from '../components/sections/TecnologiasSection.astro';
 
+const pageTitle =
+	'Portfolio de Andy Gonzales Castillo - Desarrollador de software';
+const description =
+	'Soy un desarrollador de software peruano apasionado por la creación de soluciones innovadoras.';
 ---
-<Layout title="Home">
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
-			<img 
-			class="rounded-full w-12 h-12 mb-4"
-			src="https://avatars.githubusercontent.com/u/175566321?s=96&v=4" 
-			alt="mi foto"
-			/>
-			<h1 class="text-white text-5xl font-bold flex justify-row flex-row gap-x-4 pb-4">
-				Hola, Soy Andy   <a href="https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/" target="_blank"  class="flex justify-center items-center"> <Badge>Disponible para trabajo </Badge> </a>			
-			</h1>
-			<h2 class="txt-2xl opacity-75 txt-wrap">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, consequuntur quae, eveniet fuga commodi ut molestiae ratione vel error nostrum vero consequatur quis amet.
-			</h2>
 
-			<ul>
-				<li>
-					<a 
-						href="https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/" 
-						target="_blank" 
-					>
-						<LinkedIn class="w-6 h-6" />
-						LinkedIn						
-					</a>
-				</li>
+<Layout title={pageTitle} description={description}>
+	<section id='inicio' class='w-full mx-auto lg:w-[740px] py-20'>
+		<HeroSection
+			title='Andy Rodrigo Gonzales Castillo'
+			subtitle='Desarrollador de software'
+			location='Lima, Perú'
+			email='andygonzales.2005@outlook.es'
+			avatar='https://avatars.githubusercontent.com/u/175566321?s=96&v=4'
+		/>
+	</section>
 
+	<section id='sobre-mi' class='w-full mx-auto lg:w-[740px] py-20'>
+		<AboutSection>
+			Soy un desarrollador de software peruano apasionado por crear
+			soluciones innovadoras...
+		</AboutSection>
+	</section>
 
-			</ul>
-		</section>
-
-	</main>
+	<section id='tecnologias' class='w-full mx-auto lg:w-[740px] py-20'>
+		<TecnologiasSection />
+	</section>
 </Layout>

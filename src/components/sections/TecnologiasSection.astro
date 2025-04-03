@@ -1,0 +1,43 @@
+---
+import Javascript from '../icons/JavaScript.astro';
+import Spring from '../icons/Spring.astro';
+import Java from '../icons/Java.astro';
+import AstroIcon from '../icons/AstroIcon.astro';
+import Csharp from '../icons/Csharp.astro';
+import Css from '../icons/Css.astro';
+import Html from '../icons/Html.astro';
+import Tailwind from '../icons/Tailwind.astro';
+import MySql from '../icons/MySql.astro';
+import SqlServer from '../icons/SqlServer.astro';
+
+const tecnologias = [
+	{ nombre: 'Java', icono: Java },
+	{ nombre: 'Spring', icono: Spring },
+	{ nombre: 'MySQL', icono: MySql },
+	{ nombre: 'SQL Server', icono: SqlServer },
+	{ nombre: 'C#', icono: Csharp },
+	{ nombre: 'HTML', icono: Html },
+	{ nombre: 'CSS', icono: Css },
+	{ nombre: 'JavaScript', icono: Javascript },
+	{ nombre: 'Astro', icono: AstroIcon },
+	{ nombre: 'Tailwind CSS', icono: Tailwind },
+];
+---
+
+<section class='w-full mx-auto lg:w-[740px] py-20'>
+	<h2 class='text-2xl font-bold mb-6'>Tecnologías</h2>
+	<p class='opacity-80 mb-6'>
+		Estas son algunas de las tecnologías con las que trabajo.
+	</p>
+
+	<div class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6'>
+		{
+			tecnologias.map((tech) => (
+				<div class='flex flex-col items-center gap-2'>
+					<tech.icono class='size-12' />
+					<span class='text-sm opacity-80'>{tech.nombre}</span>
+				</div>
+			))
+		}
+	</div>
+</section>
