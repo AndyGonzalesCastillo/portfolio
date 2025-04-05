@@ -1,0 +1,155 @@
+---
+import Github from '../icons/Github.astro';
+import ExternalLink from '../icons/Link.astro';
+import Codigo from '../icons/Codigo.astro';
+
+const TAGS = {
+	NEXT: {
+		name: 'Next.js',
+		class: 'bg-black text-white',
+		icon: Github,
+	},
+	TAILWIND: {
+		name: 'Tailwind CSS',
+		class: 'bg-[#003159] text-white',
+		icon: Github,
+	},
+	JAVA: {
+		name: 'Java',
+		class: 'bg-[#b07219] text-white',
+		icon: Github,
+	},
+	SPRING: {
+		name: 'Spring Boot',
+		class: 'bg-[#6db33f] text-white',
+		icon: Github,
+	},
+	ASTRO: {
+		name: 'Astro',
+		class: 'bg-[#5A67D8] text-white',
+		icon: Github,
+	},
+	CSHARP: {
+		name: 'C#',
+		class: 'bg-[#178600] text-white',
+		icon: Github,
+	},
+	JS: {
+		name: 'JavaScript',
+		class: 'bg-[#f7df1e] text-black',
+		icon: Github,
+	},
+};
+
+const PROJECTS = [
+	{
+		title: 'SVGL - A beautiful library with SVG logos',
+		description:
+			'Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.',
+		github: 'https://github.com/AndyGonzalesCastillo/svgl',
+		image: '../public/prueba.webp',
+		tags: [TAGS.NEXT, TAGS.TAILWIND],
+	},
+	{
+		title: 'AdventJS - Retos de programación con JavaScript y TypeScript',
+		description:
+			'Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.',
+		link: 'https://adventjs.dev',
+		image: '../public/prueba.webp',
+		tags: [TAGS.NEXT, TAGS.TAILWIND],
+	},
+	{
+		title: 'Gestor de Inventario',
+		description:
+			'Aplicación web para gestionar inventarios de pequeñas empresas. Incluye gestión de usuarios, productos, categorías y reportes. Desarrollado con Java Spring Boot y MySQL.',
+		link: 'https://inventario-demo.com',
+		github: 'https://github.com/AndyGonzalesCastillo/inventario-app',
+		image: '../public/prueba.webp',
+		tags: [TAGS.JAVA, TAGS.SPRING],
+	},
+	{
+		title: 'Portfolio Personal',
+		description:
+			'Mi sitio web personal desarrollado con Astro y Tailwind CSS para mostrar mis proyectos y experiencia. Optimizado para SEO y rendimiento.',
+		link: 'https://andy-gonzales.dev',
+		github: 'https://github.com/AndyGonzalesCastillo/portfolio',
+		image: '../public/prueba.webp',
+		tags: [TAGS.ASTRO, TAGS.TAILWIND],
+	},
+];
+---
+
+<section
+	class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15'
+>
+	<h2 class='text-2xl font-bold mb-6 flex items-center gap-2 text-left'>
+		<Codigo class='size-8' />
+		Proyectos
+	</h2>
+	<p class='opacity-80 mb-8 text-left'>
+		Algunos proyectos destacados en los que he trabajado.
+	</p>
+
+	<div class='flex flex-col gap-16'>
+		{
+			PROJECTS.map((project) => (
+				<article class='flex flex-col md:flex-row gap-6 md:gap-10'>
+					<div class='w-full md:w-2/5 h-60 overflow-hidden rounded-lg border border-neutral-700'>
+						<img
+							src={project.image}
+							alt={`Captura de pantalla del proyecto ${project.title}`}
+							class='w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105'
+						/>
+					</div>
+
+					<div class='w-full md:w-3/5'>
+						<h3 class='text-xl font-bold text-white mb-2'>
+							{project.title}
+						</h3>
+
+						<p class='opacity-80 mb-4 leading-relaxed'>
+							{project.description}
+						</p>
+
+						<div class='flex flex-wrap gap-2 mb-6'>
+							{project.tags.map((tag) => (
+								<span
+									class={`flex items-center gap-1 text-xs py-1 px-3 rounded-full ${tag.class}`}
+								>
+									<tag.icon class='size-3' />
+									{tag.name}
+								</span>
+							))}
+						</div>
+
+						<div class='flex gap-4'>
+							{project.github && (
+								<a
+									href={project.github}
+									target='_blank'
+									rel='noopener noreferrer'
+									class='flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors'
+								>
+									<Github class='size-4' />
+									Code
+								</a>
+							)}
+
+							{project.link && (
+								<a
+									href={project.link}
+									target='_blank'
+									rel='noopener noreferrer'
+									class='flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors'
+								>
+									<ExternalLink class='size-4' />
+									Preview
+								</a>
+							)}
+						</div>
+					</div>
+				</article>
+			))
+		}
+	</div>
+</section>

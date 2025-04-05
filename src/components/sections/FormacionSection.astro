@@ -1,0 +1,50 @@
+---
+import Universidad from '../icons/Github.astro';
+import Certificado from '../icons/AstroIcon.astro';
+import Calendario from '../icons/Codigo.astro';
+
+const formacion = [
+	{
+		titulo: 'Desarrollo de Software',
+		institucion: 'instituto san ignacio de loyola',
+		periodo: '2022 - Presente',
+		tipo: 'universidad',
+	},
+];
+---
+
+<section
+	class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15'
+>
+	<h2 class='text-2xl font-bold mb-6 text-left'>Formación</h2>
+	<p class='opacity-80 mb-6 text-left'>
+		Mi trayectoria académica y certificaciones que respaldan mis
+		habilidades técnicas.
+	</p>
+
+	<div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+		{
+			formacion.map((item) => (
+				<div class='border border-neutral-800 rounded-lg p-5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all duration-300 ease-in-out'>
+					<div class='flex items-center justify-between mb-4'>
+						<div class='size-10 flex items-center justify-center'>
+							{item.tipo === 'universidad' ? (
+								<Universidad class='size-8' />
+							) : (
+								<Certificado class='size-8' />
+							)}
+						</div>
+
+						<div class='flex items-center gap-1 text-sm opacity-75'>
+							<Calendario class='size-4' />
+							<span>{item.periodo}</span>
+						</div>
+					</div>
+
+					<h4 class='text-lg font-medium mb-2'>{item.titulo}</h4>
+					<p class='text-sm text-blue-400'>{item.institucion}</p>
+				</div>
+			))
+		}
+	</div>
+</section>

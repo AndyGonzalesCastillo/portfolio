@@ -1,0 +1,56 @@
+---
+import Mail from '../icons/Mail.astro';
+import LinkedIn from '../icons/LinkedIn.astro';
+import Github from '../icons/Github.astro';
+import Curriculum from '../icons/Curriculum.astro';
+import Icons from '../ui/Icons.astro';
+
+const email = 'andygonzales.2005@outlook.es';
+---
+
+<footer class='pt-8'>
+	<div class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0'>
+		<hr class='border-t border-gray-700 mb-8 w-full' />
+	</div>
+
+	<div
+		class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 pb-10'
+	>
+		<p class='text-gray-300 text-lg mb-4 text-left'>
+			Andy Rodrigo Gonzales Castillo
+		</p>
+
+		<div class='flex flex-wrap items-center gap-5'>
+			<Icons
+				href={`mailto:${email}`}
+				class='flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition-colors'
+			>
+				<Mail class='size-5' />
+				<span>{email}</span>
+			</Icons>
+
+			<div class='flex gap-4'>
+				<Icons
+					href='/cv.pdf'
+					target='_blank'
+					rel='noopener noreferrer'
+					class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
+				>
+					<Curriculum class='size-5' />
+				</Icons>
+				<Icons
+					href='https://github.com/AndyGonzalesCastillo'
+					class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
+				>
+					<Github class='size-5' />
+				</Icons>
+				<Icons
+					href='https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/'
+					class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
+				>
+					<LinkedIn class='size-4' />
+				</Icons>
+			</div>
+		</div>
+	</div>
+</footer>

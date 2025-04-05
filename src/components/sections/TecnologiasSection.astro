@@ -9,6 +9,8 @@ import Html from '../icons/Html.astro';
 import Tailwind from '../icons/Tailwind.astro';
 import MySql from '../icons/MySql.astro';
 import SqlServer from '../icons/SqlServer.astro';
+import Git from '../icons/Git.astro';
+import GitHub from '../icons/Github.astro';
 
 const tecnologias = [
 	{ nombre: 'Java', icono: Java },
@@ -16,28 +18,111 @@ const tecnologias = [
 	{ nombre: 'MySQL', icono: MySql },
 	{ nombre: 'SQL Server', icono: SqlServer },
 	{ nombre: 'C#', icono: Csharp },
+	{ nombre: 'Git', icono: Git },
+	{ nombre: 'GitHub', icono: GitHub },
 	{ nombre: 'HTML', icono: Html },
 	{ nombre: 'CSS', icono: Css },
 	{ nombre: 'JavaScript', icono: Javascript },
 	{ nombre: 'Astro', icono: AstroIcon },
 	{ nombre: 'Tailwind CSS', icono: Tailwind },
 ];
+
+// Duplicar las tecnologías para crear un carrusel infinito
+const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 ---
 
-<section class='w-full mx-auto lg:w-[740px] py-20'>
-	<h2 class='text-2xl font-bold mb-6'>Tecnologías</h2>
-	<p class='opacity-80 mb-6'>
+<section
+	class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15'
+>
+	<h2 class='text-2xl font-bold mb-6 text-left'>Tecnologías</h2>
+	<p class='opacity-80 mb-6 text-left'>
 		Estas son algunas de las tecnologías con las que trabajo.
 	</p>
 
-	<div class='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6'>
-		{
-			tecnologias.map((tech) => (
-				<div class='flex flex-col items-center gap-2'>
-					<tech.icono class='size-12' />
-					<span class='text-sm opacity-80'>{tech.nombre}</span>
-				</div>
-			))
-		}
+	<div class='relative overflow-hidden py-8 my-4'>
+		<!-- Círculos de fondo para destacar la tecnología actual -->
+		<div
+			class='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl'
+		>
+		</div>
+
+		<!-- Contenedor del carrusel -->
+		<div class='carousel-container flex items-center space-x-12 py-4'>
+			{
+				tecnologiasCarrusel.map((tech, index) => (
+					<div
+						class='flex flex-col items-center gap-3 min-w-[90px]'
+						id={`tech-${tech.nombre}-${index}`}
+					>
+						<div class='relative group'>
+							<tech.icono class='size-14 transition-all duration-300 hover:scale-125 z-10' />
+							<div class='absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10' />
+						</div>
+						<span class='text-sm font-medium opacity-80 transition-all duration-300 group-hover:opacity-100'>
+							{tech.nombre}
+						</span>
+					</div>
+				))
+			}
+		</div>
+
+		<!-- Gradientes para efecto de desvanecimiento en los bordes -->
+		<div
+			class='absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-background to-transparent z-10'
+		>
+		</div>
+		<div
+			class='absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-background to-transparent z-10'
+		>
+		</div>
 	</div>
 </section>
+
+<style>
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(
+				calc(-102px * 12)
+			); /* Ancho de cada item por número de items */
+		}
+	}
+
+	.carousel-container {
+		animation: scroll 40s linear infinite;
+		width: calc(
+			102px * 24
+		); /* Doble ancho para acomodar los elementos duplicados */
+	}
+
+	.carousel-container:hover {
+		animation-play-state: paused;
+	}
+
+	/* Mejora de accesibilidad para teclado */
+	.carousel-container:focus-within {
+		animation-play-state: paused;
+	}
+</style>
+
+<script>
+	// Script para reiniciar la animación si es necesario
+	document.addEventListener('DOMContentLoaded', () => {
+		const container = document.querySelector('.carousel-container');
+
+		if (!container) return;
+
+		// Detectar si la página ha estado inactiva para reiniciar la animación
+		document.addEventListener('visibilitychange', () => {
+			if (document.visibilityState === 'visible') {
+				// Usar setAttribute para evitar el error de TypeScript con style
+				container.setAttribute('style', 'animation-name: none');
+				setTimeout(() => {
+					container.setAttribute('style', 'animation-name: scroll');
+				}, 10);
+			}
+		});
+	});
+</script>
