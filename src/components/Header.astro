@@ -2,9 +2,7 @@
 const links = [
 	{ href: '#inicio', text: 'Inicio' },
 	{ href: '#tecnologias', text: 'Tecnologías' },
-	{ href: '#experiencia', text: 'Experiencia' },
 	{ href: '#proyectos', text: 'Proyectos' },
-	{ href: '#formacion', text: 'Formación' },
 ];
 ---
 
@@ -12,7 +10,6 @@ const links = [
 	class='fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/10 dark:bg-gray-950/70 border-b border-white/10 px-4'
 >
 	<div class='max-w-6xl mx-auto flex items-center justify-between h-16'>
-		<!-- Logo o nombre -->
 		<a
 			href='#inicio'
 			class='text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text hover:from-purple-500 hover:to-indigo-500 transition-all duration-300'
@@ -20,7 +17,6 @@ const links = [
 			AndyGonzales<span class='hidden sm:inline'>.dev</span>
 		</a>
 
-		<!-- Menú de navegación desktop -->
 		<nav class='hidden md:block'>
 			<ul class='flex gap-8'>
 				{
@@ -38,7 +34,6 @@ const links = [
 			</ul>
 		</nav>
 
-		<!-- Botón de menú móvil -->
 		<button
 			id='menu-toggle'
 			class='md:hidden flex flex-col justify-center items-center gap-1.5 p-2'
@@ -53,7 +48,6 @@ const links = [
 		</button>
 	</div>
 
-	<!-- Menú móvil -->
 	<div
 		id='mobile-menu'
 		class='md:hidden h-0 overflow-hidden transition-all duration-300 bg-gray-900/95 backdrop-blur-md'
@@ -79,7 +73,6 @@ const links = [
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
-		// Utilizar selectores con comprobaciones de nulidad
 		const header = document.querySelector('header') as HTMLElement | null;
 		if (!header) return;
 
@@ -87,21 +80,15 @@ const links = [
 		const menuToggle = document.getElementById('menu-toggle');
 		const mobileMenu = document.getElementById('mobile-menu');
 
-		// Retornar temprano si no se encuentran los elementos esenciales
 		if (!menuToggle || !mobileMenu) return;
 
-		// Ya sabemos que mobileMenu no es null después de la comprobación anterior
-		// TypeScript debería reconocer esto pero lo reforzamos con una declaración de tipo
 		const safeMenuBars = menuToggle.querySelectorAll('span');
 
-		// Función para abrir/cerrar el menú móvil con tipo explícito
 		function toggleMobileMenu(open: boolean): void {
-			// Aquí sabemos que mobileMenu no es null gracias a la comprobación anterior
 			if (open) {
 				mobileMenu?.classList.remove('h-0');
 				mobileMenu?.classList.add('h-auto');
 
-				// Comprobar existencia de menuBars antes de usarlo
 				if (safeMenuBars && safeMenuBars.length >= 3) {
 					safeMenuBars[0].classList.add('translate-y-2', 'rotate-45');
 					safeMenuBars[1].classList.add('opacity-0');
@@ -111,7 +98,6 @@ const links = [
 				mobileMenu?.classList.add('h-0');
 				mobileMenu?.classList.remove('h-auto');
 
-				// Comprobar existencia de menuBars antes de usarlo
 				if (safeMenuBars && safeMenuBars.length >= 3) {
 					safeMenuBars[0].classList.remove('translate-y-2', 'rotate-45');
 					safeMenuBars[1].classList.remove('opacity-0');
@@ -120,17 +106,14 @@ const links = [
 			}
 		}
 
-		// Toggle menu al hacer clic en el botón - Ahora sabemos que menuToggle y mobileMenu no son null
 		menuToggle.addEventListener('click', () => {
 			const isOpen = !mobileMenu.classList.contains('h-0');
 			toggleMobileMenu(!isOpen);
 		});
 
-		// Función para manejar el scroll suave con offset para el header
 		function smoothScrollToSection(e: Event): void {
 			e.preventDefault();
 
-			// Asegurar que el target sea un elemento
 			const target = e.currentTarget as HTMLAnchorElement;
 			if (!target) return;
 
@@ -150,19 +133,16 @@ const links = [
 						behavior: 'smooth',
 					});
 
-					// Si es menú móvil, cerrarlo (aquí sabemos que mobileMenu no es null)
 					toggleMobileMenu(false);
 				}
 			}
 		}
 
-		// Aplicar scroll suave a todos los enlaces del menú
 		const anchors = document.querySelectorAll('header a[href^="#"]');
 		anchors.forEach((anchor) => {
 			anchor.addEventListener('click', smoothScrollToSection);
 		});
 
-		// Efecto highlight en el enlace activo con margen superior ajustado
 		const observerOptions = {
 			rootMargin: `-${headerHeight + 5}px 0px -40% 0px`,
 			threshold: 0.1,
@@ -208,8 +188,7 @@ const links = [
 		background: linear-gradient(to right, #6366f1, #a855f7);
 	}
 
-	/* Espaciado específico para secciones */
 	section[id] {
-		scroll-margin-top: 5rem; /* Valor superior al height del header */
+		scroll-margin-top: 5rem;
 	}
 </style>

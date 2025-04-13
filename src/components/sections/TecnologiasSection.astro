@@ -1,64 +1,39 @@
 ---
-import Javascript from '../icons/JavaScript.astro';
-import Spring from '../icons/Spring.astro';
-import Java from '../icons/Java.astro';
-import AstroIcon from '../icons/AstroIcon.astro';
-import Csharp from '../icons/Csharp.astro';
-import Css from '../icons/Css.astro';
-import Html from '../icons/Html.astro';
-import Tailwind from '../icons/Tailwind.astro';
-import MySql from '../icons/MySql.astro';
-import SqlServer from '../icons/SqlServer.astro';
-import Git from '../icons/Git.astro';
-import GitHub from '../icons/Github.astro';
+import Rocket from '../icons/Cohete.astro';
+import { tecnologias } from '../icons/TecnologiaData.astro';
 
-const tecnologias = [
-	{ nombre: 'Java', icono: Java },
-	{ nombre: 'Spring', icono: Spring },
-	{ nombre: 'MySQL', icono: MySql },
-	{ nombre: 'SQL Server', icono: SqlServer },
-	{ nombre: 'C#', icono: Csharp },
-	{ nombre: 'Git', icono: Git },
-	{ nombre: 'GitHub', icono: GitHub },
-	{ nombre: 'HTML', icono: Html },
-	{ nombre: 'CSS', icono: Css },
-	{ nombre: 'JavaScript', icono: Javascript },
-	{ nombre: 'Astro', icono: AstroIcon },
-	{ nombre: 'Tailwind CSS', icono: Tailwind },
-];
-
-// Duplicar las tecnologías para crear un carrusel infinito
 const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 ---
 
 <section
-	class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15'
+	class='w-full max-w-[940px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-12'
 >
-	<h2 class='text-2xl font-bold mb-6 text-left'>Tecnologías</h2>
-	<p class='opacity-80 mb-6 text-left'>
-		Estas son algunas de las tecnologías con las que trabajo.
-	</p>
+	<div class='flex items-center gap-4 mb-6'>
+		<Rocket class='size-10 -mr-2' />
+		<h2 class='text-3xl font-bold'>Tecnologías</h2>
+	</div>
 
-	<div class='relative overflow-hidden py-8 my-4'>
-		<!-- Círculos de fondo para destacar la tecnología actual -->
+	<div class='relative overflow-hidden my-4'>
 		<div
-			class='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl'
+			class='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl'
 		>
 		</div>
 
-		<!-- Contenedor del carrusel -->
-		<div class='carousel-container flex items-center space-x-12 py-4'>
+		<div
+			class='carousel-container flex items-center space-x-16 py-4'
+			id='carousel'
+		>
 			{
 				tecnologiasCarrusel.map((tech, index) => (
 					<div
-						class='flex flex-col items-center gap-3 min-w-[90px]'
+						class='flex flex-col items-center gap-4 min-w-[120px]'
 						id={`tech-${tech.nombre}-${index}`}
 					>
 						<div class='relative group'>
-							<tech.icono class='size-14 transition-all duration-300 hover:scale-125 z-10' />
+							<tech.icono class='size-20 transition-all duration-300 hover:scale-125 z-10' />
 							<div class='absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10' />
 						</div>
-						<span class='text-sm font-medium opacity-80 transition-all duration-300 group-hover:opacity-100'>
+						<span class='text-base font-medium opacity-80 transition-all duration-300 group-hover:opacity-100'>
 							{tech.nombre}
 						</span>
 					</div>
@@ -66,13 +41,12 @@ const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 			}
 		</div>
 
-		<!-- Gradientes para efecto de desvanecimiento en los bordes -->
 		<div
-			class='absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-background to-transparent z-10'
+			class='absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-background to-transparent z-10'
 		>
 		</div>
 		<div
-			class='absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-background to-transparent z-10'
+			class='absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-background to-transparent z-10'
 		>
 		</div>
 	</div>
@@ -84,44 +58,77 @@ const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 			transform: translateX(0);
 		}
 		100% {
-			transform: translateX(
-				calc(-102px * 12)
-			); /* Ancho de cada item por número de items */
+			transform: translateX(calc(-136px * 12));
 		}
 	}
 
 	.carousel-container {
-		animation: scroll 40s linear infinite;
-		width: calc(
-			102px * 24
-		); /* Doble ancho para acomodar los elementos duplicados */
+		animation: scroll 45s linear infinite;
+		width: calc(136px * 24);
+		will-change: transform;
 	}
 
-	.carousel-container:hover {
+	.carousel-container:hover,
+	.carousel-container:focus-within {
 		animation-play-state: paused;
 	}
 
-	/* Mejora de accesibilidad para teclado */
-	.carousel-container:focus-within {
+	.carousel-paused {
 		animation-play-state: paused;
 	}
 </style>
 
 <script>
-	// Script para reiniciar la animación si es necesario
 	document.addEventListener('DOMContentLoaded', () => {
-		const container = document.querySelector('.carousel-container');
+		const carousel = document.getElementById('carousel');
+		if (!carousel) return;
 
-		if (!container) return;
+		let scrollPosition = 0;
+		let animationStartTime = Date.now();
+		const totalDuration = 45000;
+		const totalDistance = -136 * 12;
 
-		// Detectar si la página ha estado inactiva para reiniciar la animación
 		document.addEventListener('visibilitychange', () => {
-			if (document.visibilityState === 'visible') {
-				// Usar setAttribute para evitar el error de TypeScript con style
-				container.setAttribute('style', 'animation-name: none');
+			if (document.visibilityState === 'hidden') {
+				const elapsedTime =
+					(Date.now() - animationStartTime) % totalDuration;
+				const progressRatio = elapsedTime / totalDuration;
+				scrollPosition = totalDistance * progressRatio;
+				carousel.style.animationPlayState = 'paused';
+				carousel.style.transform = `translateX(${scrollPosition}px)`;
+			} else if (document.visibilityState === 'visible') {
+				carousel.style.animation = 'none';
+				carousel.style.transform = `translateX(${scrollPosition}px)`;
+
+				void carousel.offsetWidth;
+
+				const progressRatio = Math.abs(scrollPosition / totalDistance);
+				const newStartTimeOffset = totalDuration * progressRatio;
+
+				const newKeyframes = `
+					@keyframes resumeScroll {
+						0% {
+							transform: translateX(${scrollPosition}px);
+						}
+						100% {
+							transform: translateX(${totalDistance}px);
+						}
+					}
+				`;
+
+				const styleSheet = document.createElement('style');
+				styleSheet.textContent = newKeyframes;
+				document.head.appendChild(styleSheet);
+
+				const remainingDuration = totalDuration * (1 - progressRatio);
+
+				carousel.style.animation = `resumeScroll ${remainingDuration}ms linear infinite`;
+				animationStartTime = Date.now() - newStartTimeOffset;
+
 				setTimeout(() => {
-					container.setAttribute('style', 'animation-name: scroll');
-				}, 10);
+					carousel.style.animation = `scroll 45s linear infinite`;
+					animationStartTime = Date.now();
+				}, remainingDuration);
 			}
 		});
 	});

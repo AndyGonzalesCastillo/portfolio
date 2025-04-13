@@ -10,7 +10,7 @@ import FormacionSection from '../components/sections/FormacionSection.astro';
 const pageTitle =
 	'Portfolio de Andy Gonzales Castillo - Desarrollador de software';
 const description =
-	'Soy un desarrollador de software peruano apasionado por la creación de soluciones innovadoras.';
+	'Soy un desarrollador backend apasionado por la tecnología y el aprendizaje continuo. Me especializo en Java y Spring Boot, herramientas con las que desarrollo aplicaciones robustas, escalables y bien estructuradas.';
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -23,7 +23,7 @@ const description =
 			subtitle='Desarrollador de software'
 			location='Lima, Perú'
 			email='andygonzales.2005@outlook.es'
-			avatar='https://avatars.githubusercontent.com/u/175566321?s=96&v=4'
+			avatar='/proyectos/andy.png'
 		/>
 	</section>
 
@@ -32,15 +32,54 @@ const description =
 		class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0'
 	>
 		<AboutSection>
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
-			assumenda, quam obcaecati, reiciendis sit animi architecto delectus
-			iusto iure voluptas autem magnam laudantium quos, veritatis quidem
-			perspiciatis! Incidunt unde beatae illum fuga voluptas, numquam
-			doloremque asperiores ullam nobis eveniet vel. Magni vero ducimus
-			mollitia. Tenetur molestiae perspiciatis quia libero distinctio.</AboutSection
-		>
-	</section>
+			<p>
+				Hola, soy un <span class='text-indigo-500 font-semibold'
+					>desarrollador backend</span
+				> apasionado por la tecnología y el <span
+					class='text-indigo-500 font-semibold'>aprendizaje continuo</span
+				>. Me especializo en <span class='text-indigo-500 font-semibold'
+					>Java</span
+				> y <span class='text-indigo-500 font-semibold'>Spring Boot</span>,
+				herramientas con las que desarrollo <span
+					class='text-indigo-500 font-semibold'
+					>aplicaciones robustas, escalables y bien estructuradas</span
+				>.
+			</p>
 
+			<p class='mt-4'>
+				También tengo conocimientos sólidos en <span
+					class='text-indigo-500 font-semibold'>HTML</span
+				>, <span class='text-indigo-500 font-semibold'>CSS</span> y <span
+					class='text-indigo-500 font-semibold'>JavaScript</span
+				>, lo que me permite tener una visión integral del <span
+					class='text-indigo-500 font-semibold'>desarrollo fullstack</span
+				> y colaborar de manera efectiva en el <span
+					class='text-indigo-500 font-semibold'>frontend</span
+				> cuando es necesario.
+			</p>
+
+			<p class='mt-4'>
+				Me destaco por ser una persona <span
+					class='text-indigo-500 font-semibold'>responsable</span
+				>, <span class='text-indigo-500 font-semibold'>proactiva</span> y con
+				gran <span class='text-indigo-500 font-semibold'
+					>curiosidad técnica</span
+				>. Siempre estoy buscando asumir <span
+					class='text-indigo-500 font-semibold'>nuevos retos</span
+				> que me permitan seguir creciendo y aportando valor al equipo.
+			</p>
+
+			<p class='mt-4'>
+				Actualmente, estoy en búsqueda de <span
+					class='text-indigo-500 font-semibold'
+					>nuevas oportunidades profesionales</span
+				> donde pueda aplicar mis habilidades, aprender de otros profesionales
+				y <span class='text-indigo-500 font-semibold'
+					>contribuir desde el primer día</span
+				>.
+			</p>
+		</AboutSection>
+	</section>
 	<section
 		id='tecnologias'
 		class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0'
@@ -48,12 +87,14 @@ const description =
 		<TecnologiasSection />
 	</section>
 
+	<!--
 	<section
 		id='experiencia'
 		class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0'
 	>
 		<ExperienciaSection />
 	</section>
+	-->
 
 	<section
 		id='proyectos'

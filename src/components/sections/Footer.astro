@@ -24,33 +24,36 @@ const email = 'andygonzales.2005@outlook.es';
 			<Icons
 				href={`mailto:${email}`}
 				class='flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full transition-colors'
+				aria-label={`Enviar correo a ${email}`}
 			>
 				<Mail class='size-5' />
 				<span>{email}</span>
 			</Icons>
 
-			<div class='flex gap-4'>
-				<Icons
-					href='/cv.pdf'
-					target='_blank'
-					rel='noopener noreferrer'
-					class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
-				>
-					<Curriculum class='size-5' />
-				</Icons>
-				<Icons
-					href='https://github.com/AndyGonzalesCastillo'
-					class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
-				>
-					<Github class='size-5' />
-				</Icons>
-				<Icons
-					href='https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/'
-					class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
-				>
-					<LinkedIn class='size-4' />
-				</Icons>
-			</div>
+			<Icons
+				href='/cv.pdf'
+				target='_blank'
+				rel='noopener noreferrer'
+				class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
+				aria-label='Descargar Curriculum'
+			>
+				<Curriculum class='size-5' />
+			</Icons>
+
+			<Icons
+				href='https://github.com/AndyGonzalesCastillo'
+				class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
+				aria-label='Perfil de GitHub'
+			>
+				<Github class='size-5' />
+			</Icons>
+			<Icons
+				href='https://www.linkedin.com/in/andy-rodrigo-gonzales-castillo-18a696347/'
+				class='bg-neutral-800 hover:bg-neutral-700 text-green-400 p-2 rounded-full transition-colors'
+				aria-label='Perfil de LinkedIn'
+			>
+				<LinkedIn class='size-4' />
+			</Icons>
 		</div>
 	</div>
 </footer>
