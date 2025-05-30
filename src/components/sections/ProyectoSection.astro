@@ -1,68 +1,72 @@
 ---
-import Github from '../icons/Github.astro';
-import ExternalLink from '../icons/Link.astro';
-import Codigo from '../icons/Codigo.astro';
-import { TAGS } from '../icons/TecnologiaData.astro';
-import FlechaAbajo from '../icons/FlechaAbajo.astro';
-import FlechaArriba from '../icons/FlechaArriba.astro';
+import Github from "../icons/Github.astro";
+import ExternalLink from "../icons/Link.astro";
+import Codigo from "../icons/Codigo.astro";
+import { TAGS } from "../icons/TecnologiaData.astro";
+import FlechaAbajo from "../icons/FlechaAbajo.astro";
+import FlechaArriba from "../icons/FlechaArriba.astro";
 
 const PROJECTS = [
 	{
-		title: 'Uso del API de TMDB',
+		title: "Uso del API de TMDB",
 		description:
-			'Proyecto de prueba en Android desarrollado con Kotlin y Jetpack Compose, que consume la API de TMDB para mostrar películas, series y actores. La app permite ver detalles completos, recomendaciones, contenido similar y ofrece una búsqueda integrada para explorar películas, series y actores. Utiliza arquitectura MVVM, Retrofit, Hilt y Jetpack Navigation.',
-		link: '',
-		github: 'https://github.com/AndyGonzalesCastillo/android-api-tmdb',
-		image: '/proyectos/apitmdbimg.webp',
+			"Proyecto de prueba en Android desarrollado con Kotlin y Jetpack Compose, que consume la API de TMDB para mostrar películas, series y actores. La app permite ver detalles completos, recomendaciones, contenido similar y ofrece una búsqueda integrada para explorar películas, series y actores. Utiliza arquitectura MVVM, Retrofit, Hilt y Jetpack Navigation.",
+		link: "",
+		github: "https://github.com/AndyGonzalesCastillo/android-api-tmdb",
+		image: "/proyectos/android-api-tmdb.webp",
 		tags: [TAGS.KOTLIN],
 	},
 	{
-		title: 'Sistema para Clínica Dental',
+		title: "Sistema para Clínica Dental",
 		description:
-			'Sistema de escritorio en Windows Forms para la gestión de una clínica dental. Permite controlar pacientes, dentistas, citas, horarios y historiales clínicos. Cuenta con inicio de sesión por roles, interfaz intuitiva y operaciones personalizadas para recepcionistas y dentistas.',
-		link: '',
-		github:
-			'https://github.com/AndyGonzalesCastillo/clinica-dental-winforms',
-		image: '/proyectos/sistema_clinicadental.webp',
-		tags: [TAGS.CSHARP],
+			"Sistema de escritorio en Windows Forms para la gestión de una clínica dental. Permite controlar pacientes, dentistas, citas, horarios y historiales clínicos. Cuenta con inicio de sesión por roles, interfaz intuitiva y operaciones personalizadas para recepcionistas y dentistas.",
+		link: "",
+		github: "https://github.com/AndyGonzalesCastillo/clinica-dental-winforms",
+		image: "/proyectos/clinica-dental-winforms.webp",
+		tags: [TAGS.CSHARP, TAGS.SQL_SERVER],
 	},
 	{
-		title: 'Uso del API de TMDB',
+		title: " Sistema de Gestión Clínica CheckSalud",
 		description:
-			'Proyecto de prueba en Android desarrollado con Kotlin y Jetpack Compose, que consume la API de TMDB para mostrar películas, series y actores. La app permite ver detalles completos, recomendaciones, contenido similar y ofrece una búsqueda integrada para explorar películas, series y actores. Utiliza arquitectura MVVM, Retrofit, Hilt y Jetpack Navigation.',
-		link: '',
-		github: 'https://github.com/AndyGonzalesCastillo/android-api-tmdb',
-		image: '/proyectos/apitmdbimg.webp',
-		tags: [TAGS.KOTLIN],
+			"Solución multiplataforma desarrollada en Windows Forms, Web Forms y ASP.NET MVC para la gestión integral de una clínica. Permite administrar médicos, pacientes, empresas, consultas y análisis clínicos, con consultas estadísticas y mantenimiento de resultados médicos.",
+		link: "",
+		github: "https://github.com/AndyGonzalesCastillo/gestion-ckeck-salud",
+		image: "/proyectos/gestion-check-salud.webp",
+		tags: [TAGS.CSHARP, TAGS.SQL_SERVER],
 	},
 	{
-		title: 'Sistema para Clínica Dental',
+		title: "Sistema de Gestión para Pastelería",
 		description:
-			'Sistema de escritorio en Windows Forms para la gestión de una clínica dental. Permite controlar pacientes, dentistas, citas, horarios y historiales clínicos. Cuenta con inicio de sesión por roles, interfaz intuitiva y operaciones personalizadas para recepcionistas y dentistas.',
-		link: '',
-		github:
-			'https://github.com/AndyGonzalesCastillo/clinica-dental-winforms',
-		image: '/proyectos/sistema_clinicadental.webp',
-		tags: [TAGS.CSHARP],
+			"Sistema de gestión integral para una pastelería que permite administrar categorías, clientes, compras, empleados, insumos, pedidos, productos y proveedores, con funcionalidades de creación, edición y eliminación para cada entidad.",
+		link: "",
+		github: "https://github.com/AndyGonzalesCastillo/gestion-pasteleria",
+		image: "/proyectos/gestion-pasteleria.webp",
+		tags: [
+			TAGS.JAVA,
+			TAGS.SPRING,
+			TAGS.MYSQL,
+			TAGS.HTML,
+			TAGS.CSS,
+			TAGS.JAVASCRIPT,
+		],
 	},
 	{
-		title: 'Uso del API de TMDB',
+		title: "Comidas Peruanas",
 		description:
-			'Proyecto de prueba en Android desarrollado con Kotlin y Jetpack Compose, que consume la API de TMDB para mostrar películas, series y actores. La app permite ver detalles completos, recomendaciones, contenido similar y ofrece una búsqueda integrada para explorar películas, series y actores. Utiliza arquitectura MVVM, Retrofit, Hilt y Jetpack Navigation.',
-		link: '',
-		github: 'https://github.com/AndyGonzalesCastillo/android-api-tmdb',
-		image: '/proyectos/apitmdbimg.webp',
-		tags: [TAGS.KOTLIN],
+			"Aplicación desarrollada en Xcode con Swift que presenta recetas peruanas organizadas por categoría: desayunos, almuerzos y postres. Incluye navegación por menús, búsqueda de recetas y gestión de favoritos. Cuenta con vistas detalladas de cada comida, ingredientes, e instrucciones paso a paso.",
+		link: "",
+		github: "https://github.com/AndyGonzalesCastillo/comidas-peruanas-app",
+		image: "/proyectos/comida-peruana-app.webp",
+		tags: [TAGS.SWIFT],
 	},
 	{
-		title: 'Sistema para Clínica Dental',
+		title: "Buscador de Videojuegos con RAWG API",
 		description:
-			'Sistema de escritorio en Windows Forms para la gestión de una clínica dental. Permite controlar pacientes, dentistas, citas, horarios y historiales clínicos. Cuenta con inicio de sesión por roles, interfaz intuitiva y operaciones personalizadas para recepcionistas y dentistas.',
-		link: '',
-		github:
-			'https://github.com/AndyGonzalesCastillo/clinica-dental-winforms',
-		image: '/proyectos/sistema_clinicadental.webp',
-		tags: [TAGS.CSHARP],
+			"Aplicación desarrollada en Xcode con Swift y SwiftUI que consume la API de RAWG para mostrar una lista de videojuegos. Incluye un campo de búsqueda y un botón para consultar títulos específicos. Todo se muestra en una única vista sencilla.",
+		link: "",
+		github: "https://github.com/AndyGonzalesCastillo/api-rawg",
+		image: "/proyectos/api-rawg-app.webp",
+		tags: [TAGS.SWIFT],
 	},
 ];
 
@@ -71,55 +75,54 @@ const hiddenProjects = PROJECTS.slice(4);
 ---
 
 <section
-	class='w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15'
+	class="w-full max-w-[740px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15"
 >
-	<h2 class='text-2xl font-bold mb-6 flex items-center gap-2 text-left'>
-		<Codigo class='size-8' />
+	<h2 class="text-2xl font-bold mb-6 flex items-center gap-2 text-left">
+		<Codigo class="size-8" />
 		Proyectos
 	</h2>
 
-	<div class='flex flex-col gap-16' id='projects-container'>
+	<div
+		class="flex flex-col gap-16"
+		id="projects-container"
+	>
 		{
 			initialProjects.map((project) => (
-				<article class='flex flex-col md:flex-row gap-6 md:gap-10 project-card'>
-					<div class='w-full md:w-2/5 h-60 overflow-hidden rounded-lg border border-neutral-700'>
+				<article class="flex flex-col md:flex-row gap-6 md:gap-10 project-card">
+					<div class="w-full md:w-2/5 aspect-[16/9] overflow-hidden rounded-lg border border-neutral-700">
 						<img
 							src={project.image}
 							alt={`Captura de pantalla del proyecto ${project.title}`}
-							class='w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105'
+							class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
 						/>
 					</div>
 
-					<div class='w-full md:w-3/5'>
-						<h3 class='text-xl font-bold text-white mb-2'>
-							{project.title}
-						</h3>
+					<div class="w-full md:w-3/5">
+						<h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
 
-						<p class='opacity-80 mb-4 leading-relaxed'>
-							{project.description}
-						</p>
+						<p class="opacity-80 mb-4 leading-relaxed">{project.description}</p>
 
-						<div class='flex flex-wrap gap-2 mb-6'>
+						<div class="flex flex-wrap gap-2 mb-6">
 							{project.tags.map((tag) => (
 								<span
 									class={`flex items-center gap-1 text-xs py-1 px-3 rounded-full ${tag.class}`}
 								>
-									<tag.icon class='size-3' />
+									<tag.icon class="size-3" />
 									{tag.name}
 								</span>
 							))}
 						</div>
 
-						<div class='flex gap-4'>
+						<div class="flex gap-4">
 							{project.github && (
 								<a
 									href={project.github}
-									target='_blank'
-									rel='noopener noreferrer'
-									class='flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors'
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors"
 									aria-label={`Ver código de ${project.title} en GitHub`}
 								>
-									<Github class='size-4' />
+									<Github class="size-4" />
 									Ver código
 								</a>
 							)}
@@ -127,12 +130,12 @@ const hiddenProjects = PROJECTS.slice(4);
 							{project.link && (
 								<a
 									href={project.link}
-									target='_blank'
-									rel='noopener noreferrer'
-									class='flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors'
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors"
 									aria-label={`Ver vista previa de ${project.title}`}
 								>
-									<ExternalLink class='size-4' />
+									<ExternalLink class="size-4" />
 									Preview
 								</a>
 							)}
@@ -143,59 +146,58 @@ const hiddenProjects = PROJECTS.slice(4);
 		}
 	</div>
 
-	<div class='hidden flex-col gap-16 mt-16' id='hidden-projects'>
+	<div
+		class="hidden flex-col gap-16 mt-16"
+		id="hidden-projects"
+	>
 		{
 			hiddenProjects.map((project) => (
-				<article class='flex flex-col md:flex-row gap-6 md:gap-10 project-card opacity-0 scale-95 transform transition-all duration-500'>
-					<div class='w-full md:w-2/5 h-60 overflow-hidden rounded-lg border border-neutral-700'>
+				<article class="flex flex-col md:flex-row gap-6 md:gap-10 project-card opacity-0 scale-95 transform transition-all duration-500">
+					<div class="w-full md:w-2/5 aspect-[16/9] overflow-hidden rounded-lg border border-neutral-700">
 						<img
 							src={project.image}
 							alt={`Captura de pantalla del proyecto ${project.title}`}
-							class='w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105'
+							class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
 						/>
 					</div>
 
-					<div class='w-full md:w-3/5'>
-						<h3 class='text-xl font-bold text-white mb-2'>
-							{project.title}
-						</h3>
+					<div class="w-full md:w-3/5">
+						<h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
 
-						<p class='opacity-80 mb-4 leading-relaxed'>
-							{project.description}
-						</p>
+						<p class="opacity-80 mb-4 leading-relaxed">{project.description}</p>
 
-						<div class='flex flex-wrap gap-2 mb-6'>
+						<div class="flex flex-wrap gap-2 mb-6">
 							{project.tags.map((tag) => (
 								<span
 									class={`flex items-center gap-1 text-xs py-1 px-3 rounded-full ${tag.class}`}
 								>
-									<tag.icon class='size-3' />
+									<tag.icon class="size-3" />
 									{tag.name}
 								</span>
 							))}
 						</div>
 
-						<div class='flex gap-4'>
+						<div class="flex gap-4">
 							{project.github && (
 								<a
 									href={project.github}
-									target='_blank'
-									rel='noopener noreferrer'
-									class='flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors'
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors"
 								>
-									<Github class='size-4' />
-									Code
+									<Github class="size-4" />
+									Ver código
 								</a>
 							)}
 
 							{project.link && (
 								<a
 									href={project.link}
-									target='_blank'
-									rel='noopener noreferrer'
-									class='flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors'
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 text-sm py-1 px-4 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors"
 								>
-									<ExternalLink class='size-4' />
+									<ExternalLink class="size-4" />
 									Preview
 								</a>
 							)}
@@ -208,37 +210,37 @@ const hiddenProjects = PROJECTS.slice(4);
 
 	{
 		hiddenProjects.length > 0 && (
-			<div class='flex justify-center mt-12'>
+			<div class="flex justify-center mt-12">
 				<button
-					id='toggle-projects-btn'
-					data-state='show'
-					class='group relative inline-flex items-center justify-center px-8 py-3 font-medium text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg overflow-hidden transition-all duration-300 hover:from-purple-700 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2'
+					id="toggle-projects-btn"
+					data-state="show"
+					class="group relative inline-flex items-center justify-center px-8 py-3 font-medium text-white bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg overflow-hidden transition-all duration-300 hover:from-purple-700 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
 				>
 					<span
-						id='icon-show'
-						class='absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-y-full group-hover:translate-y-0 ease'
+						id="icon-show"
+						class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-y-full group-hover:translate-y-0 ease"
 					>
 						<FlechaAbajo />
 					</span>
 					<span
-						id='icon-hide'
-						class='absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-y-full group-hover:translate-y-0 ease opacity-0'
+						id="icon-hide"
+						class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-y-full group-hover:translate-y-0 ease opacity-0"
 					>
 						<FlechaArriba />
 					</span>
 					<span
-						id='text-show'
-						class='absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-y-full ease'
+						id="text-show"
+						class="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-y-full ease"
 					>
 						Ver más proyectos
 					</span>
 					<span
-						id='text-hide'
-						class='absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-y-full ease opacity-0'
+						id="text-hide"
+						class="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-y-full ease opacity-0"
 					>
 						Ocultar proyectos
 					</span>
-					<span class='relative invisible'>Ver más proyectos</span>
+					<span class="relative invisible">Ver más proyectos</span>
 				</button>
 			</div>
 		)
@@ -246,13 +248,13 @@ const hiddenProjects = PROJECTS.slice(4);
 </section>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const toggleBtn = document.getElementById('toggle-projects-btn');
-		const hiddenProjects = document.getElementById('hidden-projects');
-		const iconShow = document.getElementById('icon-show');
-		const iconHide = document.getElementById('icon-hide');
-		const textShow = document.getElementById('text-show');
-		const textHide = document.getElementById('text-hide');
+	document.addEventListener("DOMContentLoaded", () => {
+		const toggleBtn = document.getElementById("toggle-projects-btn");
+		const hiddenProjects = document.getElementById("hidden-projects");
+		const iconShow = document.getElementById("icon-show");
+		const iconHide = document.getElementById("icon-hide");
+		const textShow = document.getElementById("text-show");
+		const textHide = document.getElementById("text-hide");
 
 		if (
 			toggleBtn &&
@@ -262,43 +264,38 @@ const hiddenProjects = PROJECTS.slice(4);
 			textShow &&
 			textHide
 		) {
-			toggleBtn.addEventListener('click', () => {
-				const currentState = toggleBtn.getAttribute('data-state');
+			toggleBtn.addEventListener("click", () => {
+				const currentState = toggleBtn.getAttribute("data-state");
 
-				if (currentState === 'show') {
-					hiddenProjects.classList.remove('hidden');
-					hiddenProjects.classList.add('flex');
+				if (currentState === "show") {
+					hiddenProjects.classList.remove("hidden");
+					hiddenProjects.classList.add("flex");
 
-					const projectCards =
-						hiddenProjects.querySelectorAll('.project-card');
+					const projectCards = hiddenProjects.querySelectorAll(".project-card");
 					projectCards.forEach((card, index) => {
 						setTimeout(() => {
-							card.classList.remove('opacity-0', 'scale-95');
-							card.classList.add('opacity-100', 'scale-100');
+							card.classList.remove("opacity-0", "scale-95");
+							card.classList.add("opacity-100", "scale-100");
 						}, 150 * index);
 					});
 
-					toggleBtn.setAttribute('data-state', 'hide');
+					toggleBtn.setAttribute("data-state", "hide");
 
-					iconShow.classList.add('opacity-0');
-					textShow.classList.add('opacity-0');
+					iconShow.classList.add("opacity-0");
+					textShow.classList.add("opacity-0");
 
 					setTimeout(() => {
-						iconHide.classList.remove('translate-y-full', 'opacity-0');
-						textHide.classList.remove('translate-y-full', 'opacity-0');
+						iconHide.classList.remove("translate-y-full", "opacity-0");
+						textHide.classList.remove("translate-y-full", "opacity-0");
 					}, 300);
 				} else {
-					const projectCards =
-						hiddenProjects.querySelectorAll('.project-card');
+					const projectCards = hiddenProjects.querySelectorAll(".project-card");
 
 					for (let i = projectCards.length - 1; i >= 0; i--) {
 						setTimeout(
 							() => {
-								projectCards[i].classList.add('opacity-0', 'scale-95');
-								projectCards[i].classList.remove(
-									'opacity-100',
-									'scale-100'
-								);
+								projectCards[i].classList.add("opacity-0", "scale-95");
+								projectCards[i].classList.remove("opacity-100", "scale-100");
 							},
 							100 * (projectCards.length - i)
 						);
@@ -306,20 +303,20 @@ const hiddenProjects = PROJECTS.slice(4);
 
 					setTimeout(
 						() => {
-							hiddenProjects.classList.add('hidden');
-							hiddenProjects.classList.remove('flex');
+							hiddenProjects.classList.add("hidden");
+							hiddenProjects.classList.remove("flex");
 						},
 						100 * projectCards.length + 300
 					);
 
-					toggleBtn.setAttribute('data-state', 'show');
+					toggleBtn.setAttribute("data-state", "show");
 
-					iconHide.classList.add('translate-y-full', 'opacity-0');
-					textHide.classList.add('translate-y-full', 'opacity-0');
+					iconHide.classList.add("translate-y-full", "opacity-0");
+					textHide.classList.add("translate-y-full", "opacity-0");
 
 					setTimeout(() => {
-						iconShow.classList.remove('opacity-0');
-						textShow.classList.remove('opacity-0');
+						iconShow.classList.remove("opacity-0");
+						textShow.classList.remove("opacity-0");
 					}, 300);
 				}
 			});

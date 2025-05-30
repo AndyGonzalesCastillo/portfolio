@@ -1,64 +1,72 @@
 ---
-import Certificado from '../icons/Certificado.astro';
-import Calendario from '../icons/Calendario.astro';
-import Descargar from '../icons/Descargar.astro';
-import Sombrero from '../icons/Sombrero.astro';
+import Certificado from "../icons/Certificado.astro";
+import Calendario from "../icons/Calendario.astro";
+import Descargar from "../icons/Descargar.astro";
+import Sombrero from "../icons/Sombrero.astro";
 
 const formacion = [
 	{
-		titulo: 'Desarrollo de Software',
-		institucion: 'Instituto San Ignacio de Loyola',
-		periodo: '2022 - 2024',
-		tipo: 'certificado',
+		titulo: "Desarrollo de Software",
+		institucion: "Instituto San Ignacio de Loyola",
+		lugar: "Lima, Perú",
+		periodo: "2022 - 2024",
+		tipo: "certificado",
 		descripcion:
-			'Get started with dozens of web components and interactive elements built on top of Tailwind CSS.',
-		certificadoPath: '/constanciaEgresado.pdf',
+			"Egresado de la carrera técnica en Desarrollo de Software, con formación sólida en programación, bases de datos y desarrollo web",
+		certificadoPath: "/constanciaEgresado.pdf",
 	},
 ];
 ---
 
 <section
-	class='w-full max-w-[900px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15'
+	class="w-full max-w-[900px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-15"
 >
 	<h2
-		class='flex items-center text-2xl font-bold mb-6 text-left md:text-3xl text-white'
+		class="flex items-center text-2xl font-bold mb-8 text-left md:text-3xl text-white"
 	>
-		<Sombrero class='size-7 mr-2' />
+		<Sombrero class="size-7 mr-3" />
 		Formación
 	</h2>
-	<ol class='relative border-s border-dashed border-gray-700 ms-3'>
+
+	<ol class="relative border-s border-dashed border-gray-700 ms-3">
 		{
 			formacion.map((item, index) => (
-				<li
-					class={`${index !== formacion.length - 1 ? 'mb-10' : ''} ms-10`}
-				>
-					<span class='absolute flex items-center justify-center w-6 h-6 bg-blue-900 rounded-full -start-3 ring-8 ring-gray-900'>
-						<Certificado class='w-5 h-5 text-blue-300' />
+				<li class={`${index !== formacion.length - 1 ? "mb-12" : ""} ms-10`}>
+					{/* Indicador del timeline */}
+					<span class="absolute flex items-center justify-center w-6 h-6 bg-blue-900 rounded-full -start-3 ring-8 ring-gray-900">
+						<Certificado class="w-5 h-5 text-blue-300" />
 					</span>
 
-					<h3 class='flex items-center mb-1 text-lg font-semibold text-white'>
-						{item.titulo}
-					</h3>
+					{/* Contenido principal */}
+					<div class="space-y-3">
+						<h3 class="text-lg font-semibold text-white">{item.titulo}</h3>
 
-					<time class='flex items-center mb-2 text-sm font-normal leading-none text-gray-500'>
-						<Calendario class='w-3.5 h-3.5 me-1.5' />
-						{item.periodo}
-					</time>
+						<p class="text-sm text-gray-400">
+							{item.institucion} — <span class="italic">{item.lugar}</span>
+						</p>
 
-					<p class='mb-4 text-base font-normal text-gray-400'>
-						{item.descripcion}
-					</p>
+						<time class="flex items-center text-sm font-normal text-gray-500">
+							<Calendario class="w-3.5 h-3.5 me-2" />
+							{item.periodo}
+						</time>
 
-					<a
-						href={item.certificadoPath}
-						target='_blank'
-						rel='noopener noreferrer'
-						class='inline-flex items-center px-4 py-2 text-sm font-medium text-gray-400 bg-gray-800 border border-gray-600 rounded-lg hover:text-white hover:bg-gray-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-700'
-						aria-label={`Ver certificado de ${item.titulo} obtenido en ${item.institucion}`}
-					>
-						<Descargar />
-						Ver Certificado
-					</a>
+						<p class="text-base text-gray-400 leading-relaxed">
+							{item.descripcion}
+						</p>
+
+						<div class="pt-2">
+							<a
+								href={item.certificadoPath}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-400 bg-gray-800 border border-gray-600 rounded-lg hover:text-white hover:bg-gray-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-700 transition-colors duration-200"
+								aria-label={`Ver certificado de ${item.titulo} obtenido en ${item.institucion}`}
+							>
+								<Descargar class="w-4 h-4" />
+								Ver Certificado
+							</a>
+						</div>
+					</div>
 				</li>
 			))
 		}

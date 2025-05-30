@@ -1,39 +1,37 @@
 ---
-import Rocket from '../icons/Cohete.astro';
-import { tecnologias } from '../icons/TecnologiaData.astro';
+import Rocket from "../icons/Cohete.astro";
+import { tecnologias } from "../icons/TecnologiaData.astro";
 
 const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 ---
 
-<section
-	class='w-full max-w-[940px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-12'
->
-	<div class='flex items-center gap-4 mb-6'>
-		<Rocket class='size-10 -mr-2' />
-		<h2 class='text-3xl font-bold'>Tecnologías</h2>
+<section class="w-full max-w-[940px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 my-12">
+	<div class="flex items-center gap-4 mb-6">
+		<Rocket class="size-10 -mr-2" />
+		<h2 class="text-3xl font-bold">Tecnologías</h2>
 	</div>
 
-	<div class='relative overflow-hidden my-4'>
+	<div class="relative overflow-hidden my-4">
 		<div
-			class='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl'
+			class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-xl"
 		>
 		</div>
 
 		<div
-			class='carousel-container flex items-center space-x-16 py-4'
-			id='carousel'
+			class="carousel-container flex items-center space-x-16 py-4"
+			id="carousel"
 		>
 			{
 				tecnologiasCarrusel.map((tech, index) => (
 					<div
-						class='flex flex-col items-center gap-4 min-w-[120px]'
+						class="flex flex-col items-center gap-4 min-w-[120px]"
 						id={`tech-${tech.nombre}-${index}`}
 					>
-						<div class='relative group'>
-							<tech.icono class='size-20 transition-all duration-300 hover:scale-125 z-10' />
-							<div class='absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10' />
+						<div class="relative group">
+							<tech.icono class="size-20 transition-all duration-300 hover:scale-125 z-10" />
+							<div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
 						</div>
-						<span class='text-base font-medium opacity-80 transition-all duration-300 group-hover:opacity-100'>
+						<span class="text-base font-medium opacity-80 transition-all duration-300 group-hover:opacity-100">
 							{tech.nombre}
 						</span>
 					</div>
@@ -42,11 +40,11 @@ const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 		</div>
 
 		<div
-			class='absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-background to-transparent z-10'
+			class="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-background to-transparent z-10"
 		>
 		</div>
 		<div
-			class='absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-background to-transparent z-10'
+			class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-background to-transparent z-10"
 		>
 		</div>
 	</div>
@@ -79,8 +77,8 @@ const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 </style>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const carousel = document.getElementById('carousel');
+	document.addEventListener("DOMContentLoaded", () => {
+		const carousel = document.getElementById("carousel");
 		if (!carousel) return;
 
 		let scrollPosition = 0;
@@ -88,16 +86,15 @@ const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 		const totalDuration = 45000;
 		const totalDistance = -136 * 12;
 
-		document.addEventListener('visibilitychange', () => {
-			if (document.visibilityState === 'hidden') {
-				const elapsedTime =
-					(Date.now() - animationStartTime) % totalDuration;
+		document.addEventListener("visibilitychange", () => {
+			if (document.visibilityState === "hidden") {
+				const elapsedTime = (Date.now() - animationStartTime) % totalDuration;
 				const progressRatio = elapsedTime / totalDuration;
 				scrollPosition = totalDistance * progressRatio;
-				carousel.style.animationPlayState = 'paused';
+				carousel.style.animationPlayState = "paused";
 				carousel.style.transform = `translateX(${scrollPosition}px)`;
-			} else if (document.visibilityState === 'visible') {
-				carousel.style.animation = 'none';
+			} else if (document.visibilityState === "visible") {
+				carousel.style.animation = "none";
 				carousel.style.transform = `translateX(${scrollPosition}px)`;
 
 				void carousel.offsetWidth;
@@ -116,7 +113,7 @@ const tecnologiasCarrusel = [...tecnologias, ...tecnologias];
 					}
 				`;
 
-				const styleSheet = document.createElement('style');
+				const styleSheet = document.createElement("style");
 				styleSheet.textContent = newKeyframes;
 				document.head.appendChild(styleSheet);
 
